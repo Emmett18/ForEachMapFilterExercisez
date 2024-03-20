@@ -6,8 +6,12 @@ Examples:
     doubleValues([5,1,2,3,10]) // [10,2,4,6,20]
 
 */
-function doubleValues(arr){
-    
+function doubleValues(arr) {
+  const doubledVals = [];
+  arr.forEach(function (num) {
+    doubledVals.push(num * 2);
+  });
+  return doubledVals;
 }
 
 /*
@@ -18,8 +22,12 @@ Examples:
     onlyEvenValues([5,1,2,3,10]) // [2,10]
 
 */
-function onlyEvenValues(arr){
-    
+function onlyEvenValues(arr) {
+  const evenVals = [];
+  arr.filter(function (num) {
+    if (num % 2 == 0) evenVals.push(num);
+  });
+  return evenVals;
 }
 
 /*
@@ -30,8 +38,12 @@ Examples:
     showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
 
 */
-function showFirstAndLast(arr){
-    
+function showFirstAndLast(arr) {
+  const firstLast = [];
+  arr.forEach(function (word) {
+    firstLast.push(word[0] + word[word.length - 1]);
+  });
+  return firstLast;
 }
 
 /*
@@ -43,8 +55,11 @@ Examples:
     // [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
 
 */
-function addKeyAndValue(arr,key,value){
-    
+function addKeyAndValue(arr, key, value) {
+  arr.forEach(function (val) {
+    val[key] = value;
+  });
+  return arr;
 }
 
 /*
@@ -57,8 +72,18 @@ Examples:
     vowelCount('hmmm') // {};
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
-function vowelCount(str){
-   
+function vowelCount(str) {
+  let strArray = str.split("");
+  let obj = {};
+  const vowels = "aeiou";
+  strArray.forEach(function (letter) {
+    letter = letter.toLowerCase();
+    if (vowels.indexOf(letter)) {
+      if (obj[letter]) obj[letter]++;
+      else obj[letter] = 1;
+    }
+  });
+  return obj;
 }
 
 /*
@@ -69,7 +94,13 @@ Examples:
     doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 */
 
-function doubleValuesWithMap(arr) {}
+function doubleValuesWithMap(arr) {
+  const arrMap = [];
+  arr.map(function (num) {
+    arrMap.push(num * 2);
+  });
+  return arrMap;
+}
 
 /*
 Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
@@ -79,8 +110,12 @@ Examples:
     valTimesIndex([1,-2,-3]) // [0,-2,-6]
 */
 
-function valTimesIndex(arr){
-    
+function valTimesIndex(arr) {
+  const multipliedIndex = [];
+  arr.map(function (val, idx) {
+    multipliedIndex.push(val * idx);
+  });
+  return multipliedIndex;
 }
 
 /*
@@ -90,8 +125,12 @@ Examples:
     extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'name') // ['Elie', 'Tim', 'Matt', 'Colt']
 */
 
-function extractKey(arr, key){
-    
+function extractKey(arr, key) {
+  const keyedArr = [];
+  arr.map(function (val) {
+    keyedArr.push(val[key]);
+  });
+  return keyedArr;
 }
 
 /*
@@ -101,8 +140,12 @@ Examples:
     extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
 */
 
-function extractFullName(arr){
-    
+function extractFullName(arr) {
+  const extractedName = [];
+  arr.map(function (name) {
+    extractedName.push(name.first + " " + name.last);
+  });
+  return extractedName;
 }
 
 /*

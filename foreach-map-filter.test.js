@@ -26,13 +26,13 @@ describe("#showFirstAndLast", function () {
 
 describe("#addKeyAndValue", function () {
   it("adds a key and value to an array of objects", function () {
-    var arr = [
+    const arr = [
       { name: "Elie" },
       { name: "Tim" },
       { name: "Matt" },
       { name: "Colt" },
     ];
-    var updatedArr = [
+    const updatedArr = [
       { name: "Elie", title: "instructor" },
       { name: "Tim", title: "instructor" },
       { name: "Matt", title: "instructor" },
@@ -78,7 +78,7 @@ describe("#valTimesIndex", function () {
 
 describe("#extractKey", function () {
   it("returns a new array with the value of each key in an array objects", function () {
-    var arr = [
+    const arr = [
       { name: "Elie" },
       { name: "Tim" },
       { name: "Matt" },
@@ -89,7 +89,7 @@ describe("#extractKey", function () {
 });
 
 describe("#extractFulName", function () {
-  var arr = [
+  const arr = [
     { first: "Elie", last: "Schoppik" },
     { first: "Tim", last: "Garcia" },
     { first: "Matt", last: "Lane" },
@@ -106,7 +106,7 @@ describe("#extractFulName", function () {
 });
 
 describe("#filterByValue", function () {
-  var arr = [
+  const arr = [
     { first: "Elie", last: "Schoppik" },
     { first: "Tim", last: "Garcia", isCatOwner: true },
     { first: "Matt", last: "Lane" },
@@ -121,7 +121,7 @@ describe("#filterByValue", function () {
 });
 
 describe("#find", function () {
-  var arr = [1, 2, 3, 4, 5];
+  const arr = [1, 2, 3, 4, 5];
   it("returns the first value found in an array", function () {
     expect(find(arr, 3)).toEqual(3);
   });
@@ -131,7 +131,7 @@ describe("#find", function () {
 });
 
 describe("#findInObj", function () {
-  var arr = [
+  const arr = [
     { first: "Elie", last: "Schoppik" },
     { first: "Tim", last: "Garcia", isCatOwner: true },
     { first: "Matt", last: "Lane" },
